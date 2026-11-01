@@ -1,3 +1,4 @@
+import { Box } from "./box.js" // <-- Импортируем класс Box, а не функцию createBox
 import { generateRandom } from "./getRandom.js"
 
 export let matrix = []
@@ -20,12 +21,43 @@ function addBombs(bombCount){
     }
 }
 
+export function getAllNeighbors(coordinates){
+    const {x, y} = coordinates
+
+    const n_1 = matrix[y - 1]?.[x]
+    const n_2 = matrix[y - 1]?.[x + 1]
+    const n_3 = matrix[y]?.[x + 1]
+    const n_4 = matrix[y + 1]?.[x]
+    const n_5 = matrix[y + 1]?.[x - 1]
+    const n_6 = matrix[y + 1]?.[x + 1]
+    const n_7 = matrix[y]?.[x - 1]
+    const n_8 = matrix[y - 1]?.[x - 1]
+
+    return [
+        n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8
+    ].filter(item => typeof item !== 'undefined')
+}
+
 export function createMatrix(width = 8, height = 8, bombCount = 10){
     matrix = Array.from({length:height},
         () => Array.from({length:width},  () => 0)
     );
 
-    addBombs(bombCount)
-    console.log(matrix)
+    addBombs(bombCount);
 
+   
+    matrix = matrix.map((matrixLine, y) => {
+        return matrixLine.map((matrixElem, x) => {
+            return new Box(Boolean(matrixElem), {x, y}); 
+        });
+    });
+
+    matrix.forEach((matrixLine) => {
+        matrixLine.forEach((box) => {
+            box.setBoxType();
+            box.createBoxOnArea();
+        });
+    });
+
+    console.log(matrix);
 }
