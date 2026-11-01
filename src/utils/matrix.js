@@ -43,6 +43,7 @@ export function openAllBoxes () {
         matrixLine.forEach((box) => {
             if (box.isBomb){
                 box.open()
+                setTimeout(() => location.reload(),3000)
             }
             
         });

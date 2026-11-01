@@ -4,8 +4,8 @@
 }
 
 #app {
-  max-width: calc(50px * 8);
-  max-height: calc(50px * 8);
+  max-width: 400px;
+  max-height: 400px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -18,32 +18,31 @@
   align-items: center;
   justify-content: center;
 }
-#app .initial {
-  border: 5px solid gray;
-  border-style: outset;
+#app .box.initial {
+  border: 5px outset gray;
 }
-#app .bomb-count-1 {
+#app .box.bomb-count-1 {
   color: blue;
 }
-#app .bomb-count-2 {
+#app .box.bomb-count-2 {
   color: green;
 }
-#app .bomb-count-3 {
+#app .box.bomb-count-3 {
   color: red;
 }
-#app .bomb-count-4 {
+#app .box.bomb-count-4 {
   color: darkblue;
 }
-#app .bomb-count-5 {
+#app .box.bomb-count-5 {
   color: brown;
 }
-#app .bomb-count-6 {
+#app .box.bomb-count-6 {
   color: turquoise;
 }
-#app .bomb-count-7 {
+#app .box.bomb-count-7 {
   color: black;
 }
-#app .bomb-count-8 {
+#app .box.bomb-count-8 {
   color: white;
 }
 
