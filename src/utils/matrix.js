@@ -38,6 +38,17 @@ export function getAllNeighbors(coordinates){
     ].filter(item => typeof item !== 'undefined')
 }
 
+export function openAllBoxes () {
+        matrix.forEach((matrixLine) => {
+        matrixLine.forEach((box) => {
+            if (box.isBomb){
+                box.open()
+            }
+            
+        });
+    });
+}
+
 export function createMatrix(width = 8, height = 8, bombCount = 10){
     matrix = Array.from({length:height},
         () => Array.from({length:width},  () => 0)

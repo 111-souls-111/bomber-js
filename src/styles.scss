@@ -7,8 +7,8 @@ $boxSize: 50px;
 }
 #app{
 
-    max-width: calc(#{$boxSize} * 8);
-    max-height: calc(#{$boxSize} * 8);
+    max-width: $boxSize * 8;
+    max-height: $boxSize * 8;
 
     display:flex;
     flex-wrap:wrap;
@@ -21,35 +21,40 @@ $boxSize: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+        
+
+        &.initial {
+        border: 5px outset gray;
+        cursor: pointer;
+        
+        
     }
 
-    .initial {
-        border: 5px solid gray;
-        border-style: outset;
-    }
-
-    .bomb-count-1{
+    &.bomb-count-1{
         color: blue
     }
-    .bomb-count-2{
+    &.bomb-count-2{
         color: green
     }
-        .bomb-count-3{
+    &.bomb-count-3{
         color: red
     }
-        .bomb-count-4{
+    &.bomb-count-4{
         color: darkblue
     }
-        .bomb-count-5{
+    &.bomb-count-5{
         color: brown
     }
-        .bomb-count-6{
+    &.bomb-count-6{
         color: turquoise
     }
-    .bomb-count-7{
+    &.bomb-count-7{
         color: black
     }
-    .bomb-count-8{
+    &.bomb-count-8{
         color: white
     }
+    }
+
+    
 }

@@ -1,0 +1,1 @@
+rm -rf node_modules/@parcel/watcher-win32-x64/watcher.node
